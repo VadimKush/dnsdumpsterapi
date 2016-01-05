@@ -1,2 +1,35 @@
-# dnsdumpsterapi
-Unofficial python lib for DNSdumpster (dnsdumpster.com)
+## Unofficial Python lib for DNSdumpster (dnsdumpster.com)
+
+### Usage
+
+Install requirements:
+
+```shell
+pip install -r requirements.txt
+```
+
+Import the class:
+
+```python
+import dnsdumpster
+```
+
+Extract all subdomains for specific domain:
+
+```python
+api = dnsdumpster.DNSdumpster("apple.com")
+print api.get_subdomains()
+```
+
+And the result:
+
+```python
+[u'api-ams.smoot.apple.com', u'api-ams.smoot.apple.com', u'api-ams.smoot.apple.com', u'api-ams.smoot.apple.com', u'api-ams.smoot.apple.com', u'api-ams.smoot.apple.com', u'api-ams.smoot.apple.com', u'api-ash.smoot.apple.com', u'api-ash.smoot.apple.com', u'api-ash.smoot.apple.com', u'api-ash.smoot.apple.com', u'api-ash.smoot.apple.com', u'api-ash.smoot.apple.com', u'api-carry.smoot.apple.com', u'api-chi.smoot.apple.com', u'api-chi.smoot.apple.com', u'api-chi.smoot.apple.com', u'api-chi.smoot.apple.com', u'api-chi.smoot.apple.com', u'api-chi.smoot.apple.com', u'api-chi.smoot.apple.com', u'api-den.smoot.apple.com', u'api-den.smoot.apple.com', u'api-den.smoot.apple.com', u'api-den.smoot.apple.com', u'api-den.smoot.apple.com', u'api-den.smoot.apple.com', u'api-den.smoot.apple.com', u'api-lon.smoot.apple.com', u'api-lon.smoot.apple.com', u'api-lon.smoot.apple.com', u'api-lon.smoot.apple.com', u'api-lon.smoot.apple.com', u'api-lon.smoot.apple.com', u'api-lon.smoot.apple.com', u'api-mia.smoot.apple.com', u'api-mia.smoot.apple.com', u'api-mia.smoot.apple.com', u'api-mia.smoot.apple.com', u'api-mia.smoot.apple.com', u'api-mia.smoot.apple.com
+', u'api-mia.smoot.apple.com', u'api-nyc.smoot.apple.com', u'api-nyc.smoot.apple.com', u'api-nyc.smoot.apple.com', u'api-nyc.smoot.apple.com', u'api-nyc.smoot.apple.com', u'api-nyc.smoot.apple.com', u'api-nyc.smoot.apple.com',u'api-syd.smoot.apple.com', u'api-syd.smoot.apple.com', u'api-syd.smoot.apple.com', u'api-syd.smoot.apple.com', u'api-syd.smoot.apple.com', u'api-syd.smoot.apple.com',u'api-syd.smoot.apple.com', u'api-tyo.smoot.apple.com', u'api-tyo.smoot.apple.com', u'api-tyo.smoot.apple.com', u'api-tyo.smoot.apple.com', u'api-tyo.smoot.apple.com', u'api-tyo.smoot.apple.com', u'api-tyo.smoot.apple.com', u'a.ns.apple.com', u'aacs.apple.com', u'aamt.apple.com', u'aamtit-old.apple.com', u'aamtit.apple.com', u'aatcportal.apple.com', u'abs01.info.apple.com', u'abs02.info.apple.com', u'abs03.info.apple.com', u'abs05.info.apple.com', u'abs06.info.apple.com', u'abs07.info.apple.com', u'abs08.info.apple.com', u'abs09.info.apple.com', u'abs10.info.apple.com', u'absftp.info.apple.com', u'acbd.apple.com', u'acc-ept.apple.com', u'acc-ept2.apple.com', u'acc-ipt.apple.com', u'acc-mdn-old.apple.com', u'acc-mdn.apple.com', u'acc-nwk.apple.com', u'acc.apple.com', u'account-stage-nc.apple.com', u'account-stage-nwk.apple.com', u'acmultimediachat.apple.com', u'acn-members-old.apple.com', u'acoutage-eg-01.apple.com', u'acoutage-eg-02.apple.com', u'acsp.apple.com', u'actest.apple.com', u'ad-iad1.apple.com', u'ad-iad2.apple.com', u'ad-iad3.apple.com', u'adc-kbase.apple.com', u'adc-kbaset.apple.com', u'adcbzapp10.apple.com', u'adcbzapp6.apple.com', u'adcbzapp7.apple.com', u'adcbzapp8.apple.com', u'adcbzapp9.apple.com', u'adccontests.apple.com', u'adcevents.apple.com', u'adcftp1.apple.com', u'adcftp2.apple.com', u'adcftp3.apple.com', u'adcinvoice.apple.com', u'adckitchen.apple.com', u'adconitunes.apple.com', u'adcpdub01.apple.com', u'adcpdub02.apple.com', u'adcpdub03.apple.com', u'adcpdub04.apple.com', u'adcpdub05.apple.com', u'adcpdub06.apple.com', u'adcrequest.apple.com', u'adcrestore1.apple.com', u'adcrestore2.apple.com', u'adcrestore3.apple.com', u'adcrestore4.apple.com', u'adcrestore5.apple.com', u'adcrestore6.apple.com', u'adcrestore7.apple.com', u'adcrestore8.apple.com', u'adcsearch.apple.com', u'adcstudents.apple.com', u'adcsurvey.apple.com', u'adctv.apple.com', u'adcweb.apple.com', u'adcweb1.apple.com', u'adcweb2.apple.com', u'adcweb3.apple.com', u'adcweb4.apple.com', u'addressbook.apple.com', u'ade.apple.com', u'adelphi.apple.com', u'adintg-iad.apple.com', u'adns1.apple.com', u'adns2.apple.com', u'adr-old.apple.com', u'adr-temp.apple.com', u'adr.apple.com', u'adr-older.apple.com', u'adrrhap1.apple.com', u'adrrhap2.apple.com', u'adrrhap3.apple.com', u'adrrhap4.apple.com', u'adrrhap5.apple.com', u'adrt-old.apple.com', u'adrt.apple.com', u'adrtx.apple.com', u'adrweb.apple.com', u'adsdktest.apple.com', u'adunits.apple.com', u'afsportal-uat.euro.apple.com', u'afsportal-vip.euro.apple.com', u'afsportal.apple.com', u'afsportal2-vip.euro.apple.com', u'afsportal2.euro.apple.com', u'afsportal2r.euro.apple.com', u'afsweb.apple.com', u'aft.info.apple.com', u'agents-private.apple.com', u'agilepdfm.asia.apple.com', u'aide-uat.apple.com', u'akamai01.info.apple.com', u'akamai03.info.apple.com', u'akamai04.info.apple.com', u'akudjura.asia.apple.com', u'al3.apple.com', u'al4.apple.com', u'alacsvc.apple.com', u'alacsvc.info.apple.com', u'albert1a.apple.com', u'albert1b.apple.com', u'albert2a.apple.com', u'albert2b.apple.com', u'alibak1.apple.com', u'alistg1.apple.com', u'am-waldo-test.apple.com', u'am-waldo.apple.com', u'amft-it.apple.com', u'amft-uat.apple.com', u'amft.apple.com', u'ams-dr.apple.com', u'ams.apple.com', u'amst.apple.com', u'anardana.asia.apple.com', u'aoschat.apple.com', u'api-acc-ept.apple.com', u'api-acc-ept2.apple.com', u'api-acc-mdn-old.apple.com', u'api-acc-mdn.apple.com', u'api-acc-nwk.apple.com', u'api-ams.smoot.apple.com', u'api-ash.smoot.apple.com', u'api-chi.smoot.apple.com', u'api-dal.smoot.apple.com', u'api-den.smoot.apple.com', u'api-fra.smoot.apple.com', u'api-grxuat-mdn.apple.com', u'api-grxuat-nwk.apple.com', u'api-hkg.smoot.apple.com', u'api-lax.smoot.apple.com', u'api-lon.smoot.apple.com', u'api-mia.smoot.apple.com', u'api-nyc.smoot.apple.com', u'api.sjc.smoot.apple.com', u'api-sea.smoot.apple.com', u'api-sjc.smoot.apple.com', u'api-stg.smoot.apple.com', u'api-syd.smoot.apple.com', u'api-tyo.smoot.apple.com', u'api-ash.smoot.apple.com', u'api.ash.smoot.apple.com', u'api-preaka.smoot.apple.com', u'apple.com', u'apple-order1.apple.com', u'apple-order1.apple.com', u'apple-order.apple.com', u'apple-order1a.apple.com', u'apple-order1b.apple.com', u'apple-order.apple.com', u'apple-order1c.apple.com', u'applechinawifi.apple.com', u'applecustchatit.apple.com', u'applecustchatuat.apple.com', u'appledirectory-at.apple.com', u'appledirectory-dev.apple.com', u'appledirectory.apple.com', u'appleguest.asia.apple.com', u'appleid-it.apple.com', u'appleid-nc.apple.com', u'appleid-nlt.apple.com', u'appleid-nwk.apple.com', u'appleid-scv.apple.com', u'appleid-uat.apple.com', u'applemasters.apple.com', u'applenews.lists.apple.com', u'appleorder.apple.com', u'applescript-testing.apple.com', u'appleseed-beta.apple.com', u'appleseed.apple.com', u'appleseed3.apple.com', u'angelica.apple.com', u'akamai02.info.apple.com', u'mail-in23.apple.com', u'mail-in22.apple.com', u'mail-in21.apple.com', u'100', u'nwk-aaemail-lapp01.apple.com', u'nwk-aaemail-lapp03.apple.com', u'nwk-aaemail-lapp02.apple.com', u'mail-in25.apple.com', u'mail-in24.apple.com']
+```
+
+Result is an array (list()) of all subdomains.
+
+### Contributing
+
+Feel free to open issues, contribute and submit your Pull Requests.
