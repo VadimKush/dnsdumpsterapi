@@ -1,4 +1,4 @@
 import dnsdumpsterapi
 
-api = dnsdumpsterapi.DNSdumpster("apple.com")
-print api.get_subdomains()
+api = dnsdumpsterapi.DNSdumpster()
+print api.get_subdomains("apple.com")
