@@ -5,14 +5,14 @@ import openpyxl
 from requests import get,post
 
 class DNSdumpster():
-	def __init__(self,domain):
+	def __init__(self):
 		warnings.filterwarnings('ignore')
-		self.sub_regex = re.compile("([a-zA-Z0-9][a-zA-Z0-9.-]+[a-zA-Z0-9])")
-		self.domain = str(domain)
+		self.sub_regex = re.compile("([a-zA-Z0-9.-]+\.[a-zA-Z0-9]+)")
+		self.domain = ""
 		self.headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/40.0','Referer': 'https://dnsdumpster.com'}
 		self.url = "https://dnsdumpster.com"
 		self.cookie = {"csrftoken":"MJatUeBIe1HwtfEpIJd61WmbznSpScPg"}
-		self.postdata = {"csrfmiddlewaretoken":"MJatUeBIe1HwtfEpIJd61WmbznSpScPg","targetip":self.domain}
+		self.postdata = {"csrfmiddlewaretoken":"MJatUeBIe1HwtfEpIJd61WmbznSpScPg","targetip":""}
 		self.xlsx = ""
 		self.subdomains = []
 	def get_data(self):
@@ -46,7 +46,9 @@ class DNSdumpster():
 			seen[marker] = 1
 			result.append(item)
 		return result
-	def get_subdomains(self):
+	def get_subdomains(self, domain):
+		self.domain = domain
+		self.postdata["targetip"] = self.domain
 		self.get_data()
 		self.analyze_data()
 		return self.subdomains

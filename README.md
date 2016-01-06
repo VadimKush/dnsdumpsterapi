@@ -17,8 +17,8 @@ import dnsdumpsterapi
 Extract all subdomains for specific domain:
 
 ```python
-api = dnsdumpsterapi.DNSdumpster("apple.com")
-print api.get_subdomains()
+api = dnsdumpsterapi.DNSdumpster()
+print api.get_subdomains("apple.com")
 ```
 
 Result is an array (list()) of all subdomains.
